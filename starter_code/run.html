@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="exercise.js">
+    </script>
+    <style>
+    img,button,input {position:absolute; font-size:2em}
+    </style>
+    <script>
+
+    function convert(){
+        // calls function in exercise.js file,
+        // passes the number in the 'convert' box
+        var answer = exercise.fingers(number.value);
+
+        // turn off all fingers to start
+        document.getElementById('position_01').src = 'images/01_off.png';
+        document.getElementById('position_02').src = 'images/02_off.png';
+        document.getElementById('position_04').src = 'images/04_off.png';
+        document.getElementById('position_08').src = 'images/08_off.png';
+        document.getElementById('position_16').src = 'images/16_off.png';
+
+
+        // turn on fingers as needed
+        if (answer.thumbFinger == 'on'){
+                document.getElementById('position_01').src = 'images/01_on.png';
+        }
+        if (answer.indexFinger == 'on'){
+                document.getElementById('position_02').src = 'images/02_on.png';
+        }
+        if (answer.middleFinger == 'on'){
+                document.getElementById('position_04').src = 'images/04_on.png';
+        }
+        if (answer.ringFinger == 'on'){
+                document.getElementById('position_08').src = 'images/08_on.png';
+        }
+        if (answer.pinkyFinger == 'on'){
+                document.getElementById('position_16').src = 'images/16_on.png';
+        }
+    }
+
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <img id="palm" src='images/palm.png' style=
+    "left:100px; top:270px;"> <img id="position_01" src=
+    'images/01_on.png' style="left:440px; top:285px;"> <img id=
+    "position_02" src='images/02_on.png' style=
+    "left:350px; top:50px;"> <img id="position_04" src=
+    'images/04_on.png' style="left:250px; top:5px;"> <img id=
+    "position_08" src='images/08_on.png' style=
+    "left:111px; top:40px;"> <img id="position_16" src=
+    'images/16_on.png' style="left:5px; top:120px;"> <button style=
+    "left:50px;top:650px;" onclick="convert()">convert</button>
+    <form>
+      <input type="text" id="number" style=
+      "left:200px; top:650px;">
+    </form>
+  </body>
+</html>
